@@ -21,10 +21,41 @@ function atualizarListarAmigos() {
   let listaAmigos = document.getElementById("listaAmigos");
   listaAmigos.innerHTML = "";
   amigos.forEach((amigo) => {
-    let AmigoParaLista = document.createElement("li");
-    AmigoParaLista.innerHTML = amigo;
-    listaAmigos.appendChild(AmigoParaLista);
+    let amigoParaLista = criarElementoAmigo(amigo)
+    listaAmigos.appendChild(amigoParaLista);
   });
+}
+
+function criarElementoAmigo(nomeDoAmigo) {
+    const elementoAmigo = document.createElement("li");
+    elementoAmigo.id = nomeDoAmigo;
+    elementoAmigo.style.display = "flex";
+    elementoAmigo.style.justifyContent = "space-between";
+    elementoAmigo.style.alignItems = "center";
+
+    const paragrafoNomeAmigo = document.createElement("p");
+    paragrafoNomeAmigo.textContent = nomeDoAmigo;
+    elementoAmigo.appendChild(paragrafoNomeAmigo);
+
+    const botaoRemoverAmigo = document.createElement("button");
+    botaoRemoverAmigo.textContent = "X";
+    botaoRemoverAmigo.style.backgroundColor = "transparent";
+    botaoRemoverAmigo.style.border = "none";
+    botaoRemoverAmigo.style.boxShadow = "none";
+    botaoRemoverAmigo.style.color = "red";
+
+    botaoRemoverAmigo.onclick = function () {
+        removerElementoAmigo(nomeDoAmigo);
+    };
+
+    elementoAmigo.appendChild(botaoRemoverAmigo);
+
+    return elementoAmigo;
+}
+
+function removerElementoAmigo(nomeDoAmigo) {
+  amigos = amigos.filter((amigo) => amigo !== nomeDoAmigo);
+  atualizarListarAmigos();
 }
 
 function sortearAmigo() {
