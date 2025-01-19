@@ -8,6 +8,7 @@ Esse projeto foi criado no desafio da ONE, nele fui desafiado a criar a parte l�
 - `Adicionar amigo para sortear`: O usuário poderá adicionar um amigo na lista do sorteio para selecionar aleatoriamente um amigo secreto.
 - `Atualizar lista`: A lista de amigos a ser sorteada será atualizada a cada adição.
 - `Sortear amigo`: Ao clicar o botão de sortear um amigo da lista sera sorteado aleatoriamente e a lista será limpa.
+- `Remover amigo`: Ao clicar no X do lado do nome do amigo na lista você poderá excluir ele individualmente antes do sorteio.
 - `Reiniciar sorteio`: Ao adicioanar um novo amigo no sorteio após sortear um amigo secreto o site irá apagar o sorteio anterior para começar um novo.
 
 # 🛠️ Abrir e rodar o projeto
